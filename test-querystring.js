@@ -27,7 +27,8 @@ var qsTestCases = [
   [' foo = bar ', '%20foo%20=%20bar%20', {' foo ': ' bar '}],
   ['foo=%zx', 'foo=%25zx', {'foo': '%zx'}],
   ['foo=%EF%BF%BD', 'foo=%EF%BF%BD', {'foo': '\ufffd' }],
-  ['toString=bar', 'toString=bar', {'toString': 'bar'}]
+  ['toString=bar', 'toString=bar', {'toString': 'bar'}],
+  ['hasOwnProperty=bar&hasOwnProperty=baz', 'hasOwnProperty=bar&hasOwnProperty=baz', {'hasOwnProperty': ['bar', 'baz']}]
 ];
 
 // [ wonkyQS, canonicalQS, obj ]
