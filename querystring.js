@@ -145,7 +145,7 @@ QueryString.parse = QueryString.decode = function(qs, sep, eq) {
     var k = QueryString.unescape(x[0], true);
     var v = QueryString.unescape(x.slice(1).join(eq), true);
 
-    if (!(k in obj)) {
+    if (!(Object.prototype.hasOwnProperty.call(obj, k))) {
       obj[k] = v;
     } else if (!Array.isArray(obj[k])) {
       obj[k] = [obj[k], v];
